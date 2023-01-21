@@ -1,3 +1,8 @@
+# Coded By Merch (The Hengkerz)
+# Pahami Fungsi Fungsinya, Jangan Cuman Ganti Nama Author Sama Copy paste Doang
+# Kalo gak paham ya udah, gw ngodingnya sambil ngelantur
+# https://github.com/Konrett
+
 import requests as r,sys
 from bs4 import BeautifulSoup as bs
 
