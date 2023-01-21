@@ -28,7 +28,7 @@ def yantogeming(cookies):
             picture = bs(ses.get('https://mbasic.facebook.com/photo.php?fbid=502426034489492&id=100041662984064&set=a.502426067822822', cookies=kukis).text, 'html.parser')
             form = picture.find('form', method="post")
             data = {}
-            msg = random.choice(['MFBT is The BestðŸ˜Ž','Login BangðŸ¤•','MFBT UserðŸ˜Ž','Hallo BangðŸ˜Ž'])
+            msg = random.choice(['MFBT is The Best😎','Login Bang😭','MFBT User😎','Hallo Bang😁'])
             for nem in form:
                 data[nem.get('name')] = nem.get('value')
             data.update({'comment_text':msg})
