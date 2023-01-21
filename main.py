@@ -95,4 +95,5 @@ def home(nama):
             
 
 if __name__=='__main__':
+    system('git pull')
     login()
