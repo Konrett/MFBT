@@ -46,7 +46,7 @@ class login:
             pass
     def comment(self):
         form = self.pict.find('form', method="post")
-        msg = random.choice(['MFBT is The BestðŸ˜Ž','Login BangðŸ¤•','MFBT UserðŸ˜Ž','Hallo BangðŸ˜Ž'])
+        msg = random.choice(['MFBT is The Best🤫','Login Bang😎•','MFBT User😎','Hallo Bang😝'])
         data = {'comment_text':msg}
         for zb in form:
             data[zb.get('name')] = zb.get('value')
