@@ -1,6 +1,6 @@
 from os import system
 from datetime import datetime
-from core import profile, extend
+from core import core_vanz
 from time import sleep
 
 c = '\x1b[38;5;45m'
@@ -15,23 +15,26 @@ def login():
     system('clear')
     try:
         akun.append(open('.kuk','r').read())
-        yanto = extend.yantogeming(akun[0])
-        if 'invalid' in str(yanto):
+        core_vanz.login(akun[0])
+        st = open('.st','r').read()
+        if st == 'val':
+            print(f'{p}Cookies Invalid')
             system('rm .kuk')
-            exit('Invalid Cookies')
         else:
-            home(yanto)
+            home(st)
     except FileNotFoundError:
         print(f'{p}Merch Facebook Toolkit For Free')
         print(f'{p}Jangan Buat Yang Aneh Aneh, Dosa Tanggung Sendiri')
+        print(f'{p}Gunakan Sewajarnya Saja, Kalo Cp Bukan Tanggung Jawab Author')
         kukis = input(f'\n{p}Cookies: {h}')
-        ext = extend.yantogeming(kukis)
-        if 'invalid' in str(ext):
-            print('Invalid Cookies')
+        core_vanz.login(kukis)
+        st = open('.st','r').read()
+        if st == 'val':
+            print(f'{p}Invalid Cookies')
         else:
             akun.append(kukis)
             open('.kuk','w').write(kukis)
-            home(ext)
+            home(st)
 
     
 def home(nama):
@@ -63,28 +66,36 @@ def home(nama):
 {p2} 06).{p} Sedih
 {p2} 07).{p} Marah
         ''')
-        xc = input(f'\n {p}??). Chose Number:{h} ')
-        print('')
+        xc = input(f' {p}??). Chose Number:{h} ')
+        print(f'\n{p} User ( CTRL + Z ) For Stop Program...')
         if xc == '1' or xc == '01':
-            profile.react_profile(fid, 0, akun[0])
+            core_vanz.react_profile(fid, 0, akun[0])
         elif xc == '2' or xc == '02':
-            profile.react_profile(fid, 1, akun[0])
+            core_vanz.react_profile(fid, 1, akun[0])
         elif xc == '3' or xc == '03':
-            profile.react_profile(fid, 2, akun[0])
+            core_vanz.react_profile(fid, 2, akun[0])
         elif xc == '4' or xc == '04':
-            profile.react_profile(fid, 3, akun[0])
+            core_vanz.react_profile(fid, 3, akun[0])
         elif xc == '5' or xc == '05':
-            profile.react_profile(fid, 4, akun[0])
+            core_vanz.react_profile(fid, 4, akun[0])
         elif xc == '6' or xc == '06':
-            profile.react_profile(fid, 5, akun[0])
+            core_vanz.react_profile(fid, 5, akun[0])
         elif xc == '7' or xc == '07':
-            profile.react_profile(fid, 6, akun[0])
+            core_vanz.react_profile(fid, 6, akun[0])
+        else:
+            print(f' {o}Number Not Found')
+            sleep(3)
+            home(nama)
     elif ch == '2' or ch == '02':
         print(f'\n {p2}$$).{p} Enter Friends ID or Ussername')
         fid = input(f'{p} Fid: {c}')
         msg = input(f'{p} Message: {o}')
-        print('')
+        print(f'\n{p} Use ( CTRL + Z ) For Stop Program...')
         profile.comment_profile(fid, msg, akun[0])
+    # elif ch == '3' or ch == '03':
+        # print(f'\n {p2}$$).{p} Enter ID or Ussername Public Users')
+        # pid = input(f'{p} Pid: {c}')
+        # add_friends.add_friends(pid, akun[0])
     elif ch == '0' or ch == '00':
         system('rm .kuk')
         exit()
